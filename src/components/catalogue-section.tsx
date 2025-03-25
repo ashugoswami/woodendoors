@@ -12,7 +12,7 @@ export default function CatalogueSection() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-8 bg-white relative overflow-hidden"
+      className="py-16 md:py-2 bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

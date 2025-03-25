@@ -138,3 +138,17 @@ body {
 .animate-pulse-slow {
   animation: pulse 3s infinite;
 }
+
+.flip-container {
+  perspective: 1000px; /* Gives 3D effect */
+}
+
+.flip-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-container:hover .flip-inner {
+  transform: rotateY(180deg); /* Flip horizontally */
+  color: #c8a45c;
+}

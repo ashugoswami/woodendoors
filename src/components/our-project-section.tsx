@@ -1,6 +1,6 @@
 "use client";
 
-import { Image } from "antd";
+// import { Image } from "antd";
 import { useScrollAnimation } from "./hooks/use-scroll-animation";
 
 const projects = [
@@ -9,7 +9,7 @@ const projects = [
     number: "01",
     name: "City Business Center",
     image:
-      "http://windazo.like-themes.com/wp-content/uploads/2018/02/profile_03-300x300.jpg",
+      "http://windazo.like-themes.com/wp-content/uploads/2018/02/wood_gallery_01-380x550.jpg",
     description: "Premium wooden shutters for a Mediterranean-style villa.",
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     number: "02",
     name: "Fitness Club",
     image:
-      "http://windazo.like-themes.com/wp-content/uploads/2018/02/profile_03-300x300.jpg",
+      "http://windazo.like-themes.com/wp-content/uploads/2018/02/wood_gallery_02-388x550.jpg",
     description: "Commercial-grade roller blinds for a modern office complex.",
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     number: "03",
     name: "Private Cottage",
     image:
-      "http://windazo.like-themes.com/wp-content/uploads/2018/02/profile_03-300x300.jpg",
+      "	http://windazo.like-themes.com/wp-content/uploads/2018/02/wood_gallery_03-388x550.jpg",
     description: "Classic plantation shutters for a traditional country home.",
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     number: "04",
     name: "Hotel Reception",
     image:
-      "http://windazo.like-themes.com/wp-content/uploads/2018/02/profile_03-300x300.jpg",
+      "	http://windazo.like-themes.com/wp-content/uploads/2018/02/wood_gallery_04-389x550.jpg",
     description: "Custom vertical blinds for a contemporary urban apartment.",
   },
 ];
@@ -42,7 +42,13 @@ export default function ProjectsSection() {
   const [sectionRef, isVisible] = useScrollAnimation();
 
   return (
-    <section ref={sectionRef} className="py-16 md:py-24 bg-[#c8a45c]">
+    <section
+      ref={sectionRef}
+      className="py-16 md:py-24 "
+      style={{
+        background: "linear-gradient(to bottom, #c8a45c 70%, white 30%)",
+      }}
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <div className="text-white text-sm font-medium mb-2">
@@ -70,9 +76,15 @@ export default function ProjectsSection() {
               style={{ transitionDelay: `${index * 200}ms` }}
             >
               <div className="relative h-80 overflow-hidden">
-                <div className="w-full h-full transition-transform duration-500 group-hover:scale-105">
+                <div
+                  className="w-full h-full transition-transform duration-500 group-hover:scale-105"
+                  style={{
+                    backgroundImage: `url(${project.image})`,
+                    backgroundSize: "cover",
+                  }}
+                >
                   {/* {project.image} */}
-                  <Image alt="product" src={project.image} />
+                  {/* <Image alt="product" src={project.image} /> */}
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 

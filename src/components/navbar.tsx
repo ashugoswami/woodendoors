@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { ChevronRight, X } from "lucide-react";
 // import { Phone, ShoppingCart, Search } from "lucide-react";
 
 const navItems = [
@@ -29,6 +30,7 @@ const navItems = [
 
 export default function Navbar() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleMouseEnter = (name: string) => {
     setActiveDropdown(name);
@@ -36,6 +38,10 @@ export default function Navbar() {
 
   const handleMouseLeave = () => {
     setActiveDropdown(null);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
   };
 
   return (
@@ -46,7 +52,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold text-gray-900 hover:text-gold transition-colors duration-300">
-                [Aditya Doors]
+                [Aditya]
               </span>
             </Link>
           </div>
@@ -119,7 +125,10 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center">
-            <button className="text-gray-500 hover:text-gold transition-colors duration-300">
+            <button
+              className="text-gray-500 hover:text-gold transition-colors duration-300"
+              onClick={toggleMobileMenu}
+            >
               <svg
                 className="h-6 w-6"
                 fill="none"
@@ -137,6 +146,59 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden">
+          <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-[#2a1c16] text-white shadow-xl z-50 flex flex-col">
+            {/* Close button */}
+            <div className="flex justify-end p-4">
+              <button
+                onClick={toggleMobileMenu}
+                className="text-white hover:text-gold transition-colors duration-300"
+                aria-label="Close mobile menu"
+              >
+                <X className="h-6 w-6" />
+              </button>
+            </div>
+
+            {/* Navigation items */}
+            <nav className="flex-1 overflow-y-auto">
+              <ul className="px-4">
+                {navItems.map((item) => (
+                  <li
+                    key={item.name}
+                    className="border-b border-[#3c2a21] last:border-b-0"
+                  >
+                    <Link
+                      href={item.href}
+                      className={`flex items-center justify-between py-4 ${
+                        item.active
+                          ? "bg-gold text-white"
+                          : "text-white hover:bg-[#3c2a21]"
+                      }`}
+                      onClick={toggleMobileMenu}
+                    >
+                      <span className="font-medium">{item.name}</span>
+                      {item.dropdown ? (
+                        <ChevronRight className="h-5 w-5" />
+                      ) : null}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            {/* Cart at bottom */}
+            {/* <div className="p-4 border-t border-[#3c2a21] flex items-center">
+              <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#2a1c16] font-medium mr-2">
+                0
+              </div>
+              <ShoppingCart className="h-5 w-5 text-gold" />
+            </div> */}
+          </div>
+        </div>
+      )}
     </header>
   );
 }

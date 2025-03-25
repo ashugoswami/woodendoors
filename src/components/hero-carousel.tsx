@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 // import { Button } from "@/components/ui/button"
 import { MoveRight } from "lucide-react";
 import WindowShuttersImage1 from "./window-shutters-image1";
+import { Image } from "antd";
 
 const carouselItems = [
   {
@@ -117,7 +118,7 @@ export default function HeroCarousel() {
                 }`}
                 style={{ display: index === currentSlide ? "block" : "none" }}
               >
-                <img
+                <Image
                   className="ltx-floating-image"
                   alt="bg"
                   src={item?.src}
