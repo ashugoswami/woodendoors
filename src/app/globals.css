@@ -24,3 +24,117 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Custom colors */
+.bg-cream-50 {
+  /* background-color: #f9f7f2; */
+  background-color: white;
+}
+
+.bg-brown-900 {
+  background-color: #3c2a21;
+}
+
+.text-gold {
+  color: #c8a45c;
+}
+
+.border-gold {
+  border-color: #c8a45c;
+}
+
+.bg-gold {
+  background-color: #c8a45c;
+}
+
+.hover\:bg-gold-dark:hover {
+  background-color: #b08d3c;
+}
+
+.home-btn {
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.dark {
+  --background: 24 10% 10%;
+  --foreground: 0 0% 100%;
+  --card: 24 10% 10%;
+  --card-foreground: 0 0% 100%;
+  --popover: 24 10% 10%;
+  --popover-foreground: 0 0% 100%;
+  --primary: 36 60% 55%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 24 9% 15%;
+  --secondary-foreground: 0 0% 100%;
+  --muted: 24 9% 15%;
+  --muted-foreground: 24 5% 64%;
+  --accent: 24 9% 15%;
+  --accent-foreground: 0 0% 100%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 24 9% 15%;
+  --input: 24 9% 15%;
+  --ring: 36 60% 55%;
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s infinite;
+}
