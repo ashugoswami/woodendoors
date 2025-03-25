@@ -46,7 +46,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold text-gray-900 hover:text-gold transition-colors duration-300">
-                [windazo]
+                [Aditya Doors]
               </span>
             </Link>
           </div>
