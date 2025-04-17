@@ -3,7 +3,9 @@
 import { ChevronRight } from "lucide-react";
 // import LegacyImage from "./legacy-image"
 import { useScrollAnimation } from "./hooks/use-scroll-animation";
-import { Image } from "antd";
+// import { Image } from "antd";
+import DoorImage from "./icons/door-image";
+// import DoorProduct from "./icons/door-product";
 
 export default function LegacySection() {
   const [sectionRef, isVisible] = useScrollAnimation();
@@ -21,10 +23,12 @@ export default function LegacySection() {
           >
             {/* <div className="absolute inset-0 border-2 border-gold m-8 z-10"></div> */}
             <div className="relative h-full w-full">
-              <Image
+              <DoorImage />
+              {/* <DoorProduct /> */}
+              {/* <Image
                 alt="image"
                 src="http://windazo.like-themes.com/wp-content/uploads/2018/02/blog_03-1120x720.jpg"
-              />
+              /> */}
             </div>
           </div>
 

@@ -1,7 +1,9 @@
 "use client";
 
 import { useScrollAnimation } from "./hooks/use-scroll-animation";
-import { Image } from "antd";
+// import { Image } from "antd";
+import DoorProduct from "./icons/door-product";
+import DoorProductTwo from "./icons/door-producttwo";
 
 const products = [
   {
@@ -84,7 +86,12 @@ export default function BestSellersSection() {
                   </div>
                 )}
                 <div className="relative h-64 mb-4 bg-gray-100 flex items-center justify-center">
-                  <Image alt="product" src={product.image} />
+                  {/* <Image alt="product" src={product.image} /> */}
+                  {product.id === 1 || product.id === 3 ? (
+                    <DoorProduct />
+                  ) : (
+                    <DoorProductTwo />
+                  )}
                 </div>
               </div>
 

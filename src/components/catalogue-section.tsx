@@ -2,7 +2,9 @@
 
 import { FileText, ArrowRight } from "lucide-react";
 import { useScrollAnimation } from "./hooks/use-scroll-animation";
-import { Image } from "antd";
+// import { Image } from "antd";
+// import DoorImage from "./icons/door-image";
+import DoorProductTwo from "./icons/door-producttwo";
 
 // import CatalogueImage from "./catalogue-image"
 
@@ -57,10 +59,12 @@ export default function CatalogueSection() {
             }`}
           >
             {/* <CatalogueImage /> */}
-            <Image
+            {/* <DoorImage /> */}
+            <DoorProductTwo />
+            {/* <Image
               alt="catalogue"
               src="http://windazo.like-themes.com/wp-content/uploads/2018/02/magazin-1.jpg"
-            />
+            /> */}
           </div>
         </div>
 
