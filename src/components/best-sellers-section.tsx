@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+// import { Button } from "antd";
 import { useScrollAnimation } from "./hooks/use-scroll-animation";
 // import { Image } from "antd";
 import DoorProduct from "./icons/door-product";
@@ -121,14 +123,18 @@ export default function BestSellersSection() {
                   </span>
                 )}
               </div>
-
-              {/* <div className="flex justify-center">
-                <Button className="bg-gold hover:bg-gold-dark text-white px-6 py-2 rounded-none transition-all duration-300">
-                  ADD TO CART <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div> */}
             </div>
           ))}
+        </div>
+        <div className="flex justify-center mt-4">
+          <Link href="/products" className="text-white hover:text-gold">
+            <button
+              className="bg-gold hover:bg-gold-dark text-white px-6 py-2 rounded-none transition-all duration-300"
+              style={{ cursor: "pointer" }}
+            >
+              Load More
+            </button>
+          </Link>
         </div>
       </div>
     </section>
