@@ -3,10 +3,8 @@ export default function DoorImage() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="600"
       zoomAndPan="magnify"
       viewBox="0 0 750 599.999999"
-      height="400"
       preserveAspectRatio="xMidYMid meet"
       version="1.0"
     >

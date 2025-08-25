@@ -3,10 +3,9 @@ export default function DoorProductTwo() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
-      width="600"
       zoomAndPan="magnify"
       viewBox="0 0 750 749.999995"
-      height="400"
+      height="300"
       preserveAspectRatio="xMidYMid meet"
       version="1.0"
     >

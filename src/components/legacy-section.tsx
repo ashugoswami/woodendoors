@@ -22,7 +22,10 @@ export default function LegacySection() {
             }`}
           >
             {/* <div className="absolute inset-0 border-2 border-gold m-8 z-10"></div> */}
-            <div className="relative h-full w-full">
+            <div
+              className="relative h-full w-full"
+              // style={{ height: "400px", width: "500px" }}
+            >
               <DoorImage />
               {/* <DoorProduct /> */}
               {/* <Image

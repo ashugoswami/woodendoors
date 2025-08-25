@@ -58,7 +58,7 @@ export default function Navbar() {
           </div>
 
           {/* Navigation - Desktop */}
-          <nav className="hidden md:flex space-x-6">
+          <nav className="hidden lg:flex space-x-6">
             {navItems.map((item, i) => (
               <div
                 key={item.name}
@@ -124,9 +124,10 @@ export default function Navbar() {
           </div> */}
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center">
+          <div className="lg:hidden flex items-center">
             <button
               className="text-gray-500 hover:text-gold transition-colors duration-300"
+              style={{ cursor: "pointer" }}
               onClick={toggleMobileMenu}
             >
               <svg
@@ -149,13 +150,14 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden">
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 lg:hidden">
           <div className="fixed inset-y-0 right-0 max-w-xs w-full bg-[#2a1c16] text-white shadow-xl z-50 flex flex-col">
             {/* Close button */}
             <div className="flex justify-end p-4">
               <button
                 onClick={toggleMobileMenu}
                 className="text-white hover:text-gold transition-colors duration-300"
+                style={{ cursor: "pointer" }}
                 aria-label="Close mobile menu"
               >
                 <X className="h-6 w-6" />
