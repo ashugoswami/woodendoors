@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { useScrollAnimation } from "../hooks/use-scroll-animation";
 import { Search, Filter } from "lucide-react";
 import ProductCard from "./product-card";
+// import proimage from "../../Images/firmbee-com-SpVHcbuKi6E-unsplash.jpg";
 
 // Sample product data
 const products = [
@@ -16,6 +17,7 @@ const products = [
     rating: 4.8,
     reviews: 124,
     image: "/product-handle-1.png",
+    // image: { proimage },
     isOnSale: true,
     isFeatured: true,
     description: "High-quality stainless steel door handle with modern design",

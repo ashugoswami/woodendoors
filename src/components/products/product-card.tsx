@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Star, ShoppingCart, Eye, Heart } from "lucide-react";
+// import { Button } from "@/components/ui/button"
+import ProductModal from "./product-modal";
 import { Button } from "antd";
 
 interface Product {
@@ -31,6 +33,11 @@ export default function ProductCard({
 }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleViewDetails = () => {
+    setShowModal(true);
+  };
 
   return (
     <div
@@ -85,7 +92,10 @@ export default function ProductCard({
           >
             <Heart className="h-4 w-4" />
           </button>
-          <button className="p-2 bg-white text-gray-600 rounded-full hover:bg-gold hover:text-white transition-colors duration-300">
+          <button
+            onClick={handleViewDetails}
+            className="p-2 bg-white text-gray-600 rounded-full hover:bg-gold hover:text-white transition-colors duration-300"
+          >
             <Eye className="h-4 w-4" />
           </button>
         </div>
@@ -159,6 +169,15 @@ export default function ProductCard({
           )}
         </div>
       </div>
+
+      {/* Product Modal */}
+      {showModal && (
+        <ProductModal
+          product={product}
+          isOpen={showModal}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </div>
   );
 }
