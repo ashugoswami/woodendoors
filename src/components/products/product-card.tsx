@@ -1,10 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { Star, ShoppingCart, Eye, Heart } from "lucide-react";
-// import { Button } from "@/components/ui/button"
-import ProductModal from "./product-modal";
+import { Star, Eye, Heart, ShoppingCart } from "lucide-react";
 import { Button } from "antd";
+import { useRouter } from "next/navigation";
+// import InquiryModal from "./inquiry-modal";
+// import { Button } from "@/components/ui/button"
 
 interface Product {
   id: number;
@@ -33,10 +34,12 @@ export default function ProductCard({
 }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  // const [showInquiryModal, setShowInquiryModal] = useState(false);
+  const router = useRouter();
 
   const handleViewDetails = () => {
-    setShowModal(true);
+    // window.open(`/products/${product.id}`, "_blank");
+    router.push(`/products/${product.id}`);
   };
 
   return (
@@ -108,9 +111,17 @@ export default function ProductCard({
               : "opacity-0 transform translate-y-8"
           }`}
         >
+          {/* <Button
+            onClick={() => setShowInquiryModal(true)}
+            // variant="outline"
+            className="border-gold text-gold hover:bg-gold hover:text-white py-3 rounded-lg transition-all duration-300"
+          >
+            <MessageSquare className="h-5 w-5 mr-2" />
+            Inquiry
+          </Button> */}
           <Button className="w-full bg-gold hover:bg-gold-dark text-white py-2 rounded-lg transition-all duration-300">
             <ShoppingCart className="h-4 w-4 mr-2" />
-            Quick Add
+            Inquiry
           </Button>
         </div>
       </div>
@@ -169,15 +180,13 @@ export default function ProductCard({
           )}
         </div>
       </div>
-
-      {/* Product Modal */}
-      {showModal && (
-        <ProductModal
-          product={product}
-          isOpen={showModal}
-          onClose={() => setShowModal(false)}
-        />
-      )}
+      {/* {showInquiryModal && (
+              <InquiryModal
+                product={extendedProduct}
+                isOpen={showInquiryModal}
+                onClose={() => setShowInquiryModal(false)}
+              />
+            )} */}
     </div>
   );
 }
