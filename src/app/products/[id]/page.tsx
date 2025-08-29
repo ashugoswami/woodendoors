@@ -1,15 +1,17 @@
 import ProductDetail from "../../../components/products/product-details";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = await params;
+
   return (
     <div className="min-h-screen">
-      <ProductDetail productId={params.id} />
+      <ProductDetail productId={id} />
     </div>
   );
 }
