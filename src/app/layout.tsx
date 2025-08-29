@@ -5,6 +5,7 @@ import "./globals.css";
 // import { ThemeProvider } from "@/components/theme-provider"
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import WhatsAppChatWidget from "@/components/whatsapp-chat-widget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <WhatsAppChatWidget />
         {/* </ThemeProvider> */}
       </body>
     </html>

@@ -2,9 +2,11 @@
 
 import { useState, useMemo } from "react";
 import { useScrollAnimation } from "../hooks/use-scroll-animation";
-import { Search, Filter } from "lucide-react";
+import { Search, Filter, Plus } from "lucide-react";
 import ProductCard from "./product-card";
-// import proimage from "../../Images/firmbee-com-SpVHcbuKi6E-unsplash.jpg";
+import AddProductModal from "./add-product-modal";
+import { Button } from "antd";
+// import Button from "@/components/ui/button"
 
 // Sample product data
 const products = [
@@ -17,7 +19,6 @@ const products = [
     rating: 4.8,
     reviews: 124,
     image: "/product-handle-1.png",
-    // image: { proimage },
     isOnSale: true,
     isFeatured: true,
     description: "High-quality stainless steel door handle with modern design",
@@ -177,6 +178,7 @@ export default function ProductsContent() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All Products");
   const [sortBy, setSortBy] = useState("featured");
+  const [showAddProductModal, setShowAddProductModal] = useState(false);
 
   const filteredProducts = useMemo(() => {
     let filtered = products;
@@ -301,13 +303,22 @@ export default function ProductsContent() {
                   : "opacity-0 transform translate-y-8"
               }`}
             >
-              <h2 className="text-2xl font-bold text-gray-900">
-                {selectedCategory} ({filteredProducts.length} products)
-              </h2>
-              <div className="flex items-center space-x-2 text-gray-600">
-                <Filter className="h-5 w-5" />
-                <span>Showing {filteredProducts.length} results</span>
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900">
+                  {selectedCategory} ({filteredProducts.length} products)
+                </h2>
+                <div className="flex items-center space-x-2 text-gray-600 mt-1">
+                  <Filter className="h-5 w-5" />
+                  <span>Showing {filteredProducts.length} results</span>
+                </div>
               </div>
+              <Button
+                onClick={() => setShowAddProductModal(true)}
+                className="bg-gold hover:bg-gold-dark text-white px-6 py-3 rounded-lg transition-all duration-300 flex items-center"
+              >
+                <Plus className="h-5 w-5 mr-2" />
+                Add Product
+              </Button>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -337,6 +348,18 @@ export default function ProductsContent() {
           </div>
         </div>
       </div>
+      {/* Add Product Modal */}
+      {showAddProductModal && (
+        <AddProductModal
+          isOpen={showAddProductModal}
+          onClose={() => setShowAddProductModal(false)}
+          onProductAdded={(newProduct) => {
+            // In a real app, this would update the products list
+            console.log("New product added:", newProduct);
+            alert("Product added successfully!");
+          }}
+        />
+      )}
     </section>
   );
 }
