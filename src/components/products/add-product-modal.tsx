@@ -197,7 +197,8 @@ export default function AddProductModal({
         images: formData.images.filter((img) => img.trim()),
         features: formData.features.filter((feature) => feature.trim()),
         specifications: Object.fromEntries(
-          Object.entries(formData.specifications).filter(([_, value]) =>
+          //   Object.entries(formData.specifications).filter(([_, value]) =>
+          Object.entries(formData.specifications).filter(([value]) =>
             value.trim()
           )
         ),
