@@ -4,50 +4,47 @@ import Link from "next/link";
 // import { Button } from "antd";
 import { useScrollAnimation } from "./hooks/use-scroll-animation";
 // import { Image } from "antd";
-import DoorProduct from "./icons/door-product";
-import DoorProductTwo from "./icons/door-producttwo";
+// import DoorProduct from "./icons/door-product";
+// import Doorim from "../Images/PRODUCT NAME - THE NATURE TONE_20250905_152610_0000.jpg";
+// import DoorProductTwo from "./icons/door-producttwo";
+// import Image from "next/image";
+import { Image } from "antd";
 
 const products = [
   {
     id: 1,
-    name: "Rebau Termo",
-    description:
-      "Vestibulum lorem libero, elementum vitae aliquet a, laoreet nec odio.",
+    name: "Aura",
+    description: "Elevate your home's first impression with the Aura main Door",
     originalPrice: 19.0,
     price: 14.0,
-    image:
-      "http://windazo.like-themes.com/wp-content/uploads/2018/02/wood_item_01-300x300.jpg",
+    image: "/Images/PRODUCT NAME-_20250905_154059_0000.jpg",
     onSale: true,
   },
   {
     id: 2,
-    name: "Porto Glass",
-    description:
-      "Vestibulum lorem libero, elementum vitae aliquet a, laoreet nec odio.",
+    name: "Glass Sunmica Door",
+    description: "Sunmica Door: A perfect blend of style and durablity",
     price: 39.0,
-    image:
-      "http://windazo.like-themes.com/wp-content/uploads/2018/02/wood_item_03-300x300.jpg",
+    image: "/Images/PRODUCT NAME - THE NATURE TONE_20250905_152610_0000.jpg",
     onSale: false,
   },
   {
     id: 3,
-    name: "Sliding Profile",
-    description:
-      "Vestibulum lorem libero, elementum vitae aliquet a, laoreet nec odio.",
+    name: "Chocolate Groove",
+    description: "Exquisite Chocolate Veneer Door by Aditya Doors",
     price: 19.0,
-    image:
-      "http://windazo.like-themes.com/wp-content/uploads/2018/02/profile_03-300x300.jpg",
+    image: "/Images/1_20250904_232041_0000.png",
     onSale: false,
   },
   {
     id: 4,
-    name: "Sealine Wood",
+    name: "Teak Wood Door Frame",
     description:
-      "Vestibulum lorem libero, elementum vitae aliquet a, laoreet nec odio.",
+      "Aditya Doors proudly presents our exquisite Teak Wood Door Frame, also known as Sagwan Chokhat",
     originalPrice: 49.0,
     price: 39.0,
     image:
-      "http://windazo.like-themes.com/wp-content/uploads/2018/02/wood_item_01-300x300.jpg",
+      "/Images/TEAK WOOD(SAGWAN) DOOR FRAME(CHOKHAT)_20250904_234508_0001.jpg",
     onSale: true,
   },
 ];
@@ -88,12 +85,13 @@ export default function BestSellersSection() {
                   </div>
                 )}
                 <div className="relative h-64 mb-4 bg-gray-100 flex items-center justify-center">
-                  {/* <Image alt="product" src={product.image} /> */}
-                  {product.id === 1 || product.id === 3 ? (
-                    <DoorProduct />
-                  ) : (
-                    <DoorProductTwo />
-                  )}
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full"
+                    // width={280}
+                    height={255}
+                  />
                 </div>
               </div>
 
@@ -104,7 +102,7 @@ export default function BestSellersSection() {
                 {product.description}
               </p>
 
-              <div className="flex justify-center items-center mb-4">
+              {/* <div className="flex justify-center items-center mb-4">
                 {product.originalPrice ? (
                   <>
                     <span className="text-gray-400 line-through mr-2">
@@ -122,7 +120,7 @@ export default function BestSellersSection() {
                     ${product.price.toFixed(2)}
                   </span>
                 )}
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

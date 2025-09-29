@@ -14,9 +14,9 @@ export default function Home() {
       <HeroCarousel />
       <FeatureSection />
       <WindowTypesSection />
+      <BestSellersSection />
       <LegacySection />
       <CatalogueSection />
-      <BestSellersSection />
       <ProjectsSection />
       <TestimonialsSection />
       <AppointmentSection />

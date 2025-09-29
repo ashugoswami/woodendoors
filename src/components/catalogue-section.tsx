@@ -69,7 +69,7 @@ export default function CatalogueSection() {
         </div>
 
         {/* Features */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mt-16 mb-6">
           {features.map((feature, index) => (
             <div
               key={index}

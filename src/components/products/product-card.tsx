@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Star, Eye, Heart, ShoppingCart } from "lucide-react";
-import { Button } from "antd";
+import { Button, Image } from "antd";
 import { useRouter } from "next/navigation";
 // import InquiryModal from "./inquiry-modal";
 // import { Button } from "@/components/ui/button"
@@ -57,10 +57,17 @@ export default function ProductCard({
       <div className="relative h-64 overflow-hidden">
         <div className="w-full h-full bg-gray-200 flex items-center justify-center">
           {/* Placeholder for product image */}
-          <div className="text-gray-400 text-center">
+          <Image
+            src={product.image}
+            alt={product.name}
+            className="w-full"
+            // width={280}
+            // height={255}
+          />
+          {/* <div className="text-gray-400 text-center">
             <div className="w-20 h-20 bg-gray-300 rounded-lg mx-auto mb-2"></div>
             <p className="text-sm">{product.name}</p>
-          </div>
+          </div> */}
         </div>
 
         {/* Badges */}
@@ -119,9 +126,13 @@ export default function ProductCard({
             <MessageSquare className="h-5 w-5 mr-2" />
             Inquiry
           </Button> */}
-          <Button className="w-full bg-gold hover:bg-gold-dark text-white py-2 rounded-lg transition-all duration-300">
+
+          <Button
+            className="w-full bg-gold hover:bg-gold-dark text-white py-2 rounded-lg transition-all duration-300"
+            onClick={handleViewDetails}
+          >
             <ShoppingCart className="h-4 w-4 mr-2" />
-            Inquiry
+            More Detail
           </Button>
         </div>
       </div>

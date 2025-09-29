@@ -14,19 +14,22 @@ export default function DoorProduct() {
         <filter x="0%" y="0%" width="100%" height="100%" id="5f576be8ed">
           <feColorMatrix
             values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1 0"
-            color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
+            // color-interpolation-filters="sRGB"
           />
         </filter>
         <filter x="0%" y="0%" width="100%" height="100%" id="cd8dc5a2a9">
           <feColorMatrix
             values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0.2126 0.7152 0.0722 0 0"
-            color-interpolation-filters="sRGB"
+            // color-interpolation-filters="sRGB"
+            colorInterpolationFilters="sRGB"
           />
         </filter>
         <clipPath id="07d9c27b36">
           <path
             d="M 241.117188 44.285156 L 508.867188 44.285156 L 508.867188 705.785156 L 241.117188 705.785156 Z M 241.117188 44.285156 "
-            clip-rule="nonzero"
+            clipRule="nonzero"
+            // clip-rule="nonzero"
           />
         </clipPath>
         <image
@@ -41,7 +44,8 @@ export default function DoorProduct() {
         <clipPath id="d32df19e51">
           <path
             d="M 261.285156 358 L 316 358 L 316 384.570312 L 261.285156 384.570312 Z M 261.285156 358 "
-            clip-rule="nonzero"
+            // clip-rule="nonzero"
+            clipRule="nonzero"
           />
         </clipPath>
         <image

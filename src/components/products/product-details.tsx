@@ -20,7 +20,7 @@ import {
 // import { Button } from "@/components/ui/button"
 import Link from "next/link";
 import InquiryModal from "./inquiry-modal";
-import { Button } from "antd";
+import { Button, Image } from "antd";
 // import { Button } from "antd"
 
 interface Product {
@@ -41,16 +41,16 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: "Premium Steel Door Handle",
+    name: "Aura",
     category: "Handles",
     price: 89.99,
     originalPrice: 120.0,
     rating: 4.8,
     reviews: 124,
-    image: "/product-handle-1.png",
+    image: "/Images/PRODUCT NAME-_20250905_154059_0000.jpg",
     isOnSale: true,
     isFeatured: true,
-    description: "High-quality stainless steel door handle with modern design",
+    description: "Elevate your home's first impression with the Aura main Door",
   },
   {
     id: 2,
@@ -216,11 +216,18 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
               <div className="relative aspect-square bg-white rounded-lg overflow-hidden shadow-lg">
                 <div className="w-full h-full flex items-center justify-center">
                   <div className="text-gray-400 text-center">
-                    <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-300 rounded-lg mx-auto mb-4"></div>
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full"
+                      // width={280}
+                      // height={255}
+                    />
+                    {/* <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-300 rounded-lg mx-auto mb-4"></div>
                     <p className="text-lg md:text-xl font-medium">
                       {product.name}
                     </p>
-                    <p className="text-sm">Image {selectedImage + 1}</p>
+                    <p className="text-sm">Image {selectedImage + 1}</p> */}
                   </div>
                 </div>
 
